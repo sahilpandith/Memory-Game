@@ -23,13 +23,14 @@ function App() {
       alert('game over');
       setBestScore(score);
       clearStates();
-    }else if(hitUrls.length===12){
-      alert('won');
-      setBestScore(score);
-      clearStates();
     }else{
       setHitUrls([...hitUrls,url]); 
       setScore(score+1);
+      if(hitUrls.length===12){
+        alert('won');
+        setBestScore(score);
+        clearStates();
+      }
     }
   }
 
