@@ -8,6 +8,12 @@ function App() {
   const bestScore = useRef(0);
   const [data,setData] = useState([]);
   const [hitUrls,setHitUrls] = useState([]);
+
+  if(hitUrls.length===12){
+    alert('won');
+    setBestScore(score);
+    clearStates();
+  }
   
   function clearStates(){
     setScore(0);
@@ -26,11 +32,6 @@ function App() {
     }else{
       setHitUrls([...hitUrls,url]); 
       setScore(score+1);
-      if(hitUrls.length===12){
-        alert('won');
-        setBestScore(score);
-        clearStates();
-      }
     }
   }
 
